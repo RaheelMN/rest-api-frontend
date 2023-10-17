@@ -9,14 +9,19 @@ It is based on Youtube channel "Code with Tony" video title "Laravel Rest API CR
 2. Packages
    
    For themes tailwind is used by running command: npm install -D tailwindcss
+   
    Further tailwind commands can be seen at: https://tailwindcss.com/docs/installation
+   
    Routing package : react-router-dom
+   
    API package: axios
+   
    Message dialog box package: react-toastify
+   
    Icons package: react-icons
 
 
-3. UseContext
+4. UseContext
    
    To use variables and functions in mulitple components a hook useContext is used which is part of react library.
    A wrapper  <SkillProvider> is used around components which can access these variables and functions.
@@ -26,7 +31,7 @@ It is based on Youtube channel "Code with Tony" video title "Laravel Rest API CR
    In retun statment of SkillProvider we use <SkillContext.Provider value={{}}> where value contains variables and functions name.
 
 
-4. Routes
+5. Routes
    
    Navigation bar has buttons which have <link> wrapper such as Home has <Link to="/">Home</Link>.
    Link is part of react-router-dom which corresponds to route.
@@ -36,14 +41,14 @@ It is based on Youtube channel "Code with Tony" video title "Laravel Rest API CR
    Navigate function is part of react-router-dom. We give route url as parameter and broswer displays its corresponding component.
 
    
-5. Axios
+6. Axios
    
    To make ajax request React uses axios library. In fetch request, response is in json format and we have use another promise to retreive
    data using response.JSON().
    In axios data can directly be accessed without json parsing.
 
 
-6. Toastify
+7. Toastify
     
    It is used when Skill is successfully added, updated or deleted.
    To use it within component we have to import it using
@@ -51,7 +56,7 @@ It is based on Youtube channel "Code with Tony" video title "Laravel Rest API CR
    To display dialogbox we have to import ToastContainer and its CSS file in parent component.
 
 
-7. Application
+8. Application
     
    It is simple CRUD application where Skills can be listed, added, updated and deleted.
    When sending ajax request it is encapsulated with try catch code and if response has status code 422 then it is displayed at console.
