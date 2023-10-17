@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+This is first React Laravel Project
+It is based on Youtube channel "Code with Tony" video title "Laravel Rest API CRUD with React full Tutorial | Laravel react tutorial"
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. Create Project
+    React project is created by using command: npm create-react-add rest-api-frontend
 
-## Available Scripts
+2. Packages  
+    For themes tailwind is used by running command: npm install -D tailwindcss
+    Further tailwind commands can be seen at: https://tailwindcss.com/docs/installation
+    Routing package : react-router-dom
+    API package: axios
+    Message dialog box package: react-toastify
+    Icons package: react-icons
 
-In the project directory, you can run:
+4. UseContext
+   To use variables and functions in mulitple components a hook useContext is used which is part of react library.
+   A wrapper  <SkillProvider> is used around components which can access these variables and functions.
+   SkillProvider is functional component which accepts child components as argument and return them using {children}
+   SkillContext is of object type createContext(). It is used within component to access variables and functions using
+   const {...parameters} = useContext(SkillContext)
+   In retun statment of SkillProvider we use <SkillContext.Provider value={{}}> where value contains variables and functions name.
 
-### `npm start`
+5. Routes
+   Navigation bar has buttons which have <link> wrapper such as Home has <Link to="/">Home</Link>.
+   Link is part of react-router-dom which corresponds to route.
+   Routes and Route are part of react-router-dom
+   Routes wrappes around Route component. Route component has path and corresponding element.
+   When user press linked button browser goes to Route component in which it is defined and displays correspoding component.
+   Navigate function is part of react-router-dom. We give route url as parameter and broswer displays its corresponding component.
+   
+7. Axios
+   To make ajax request React uses axios library. In fetch request, response is in json format and we have use another promise to retreive
+   data using response.JSON().
+   In axios data can directly be accessed without json parsing.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+8. Toastify
+   It is used when Skill is successfully added, updated or deleted.
+   To use it within component we have to import it using
+   import { toast } from "react-toastify";
+   To display dialogbox we have to import ToastContainer and its CSS file in parent component.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+9. Application
+    It is simple CRUD application where Skills can be listed, added, updated and deleted.
+   When sending ajax request it is encapsulated with try catch code and if response has status code 422 then it is displayed at console.
+   
+   
